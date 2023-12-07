@@ -213,20 +213,13 @@ for token in doc:
 import nltk
 from nltk.util import ngrams
 from collections import Counter
-from nltk.corpus import reuters
 from nltk.corpus import stopwords
 
-# Download the Reuters dataset
-nltk.download('reuters')
+
 nltk.download('punkt')
 nltk.download('stopwords')
 
-# Load documents from the Reuters dataset
-documents = reuters.fileids()
-corpus = [reuters.raw(doc_id) for doc_id in documents]
-
-# Concatenate all documents into a single string
-text = " ".join(corpus)
+text = "Thank you so much for your hepl, I really appreatiate your help. Excuse me do you know what time its.sorry for not inviting you.i relly your wa realyy live your gardan?"*100
 
 # Tokenize the text and remove stopwords
 words = nltk.word_tokenize(text)
@@ -246,6 +239,9 @@ for n in n_values:
     for gram, count in n_gram_counts.most_common(10):
         print(f"{gram}: {count}")
     print("\n")
+
+
+
 
 
 
